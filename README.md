@@ -14,4 +14,10 @@ kubectl delet -f <manifestfile>
 
 Replicaset-commands
 
-s
+kubectl get replicaset
+kubectl get replicaset <nameof replicaset>
+kubectl edit replicaset <name of replicaset>
+kubectl set image rs test-replicaset php-redis=nginx:1.7.9
+kubectl scale -replicas=6 -f <manifestfile>
+kubectl scale -replicas=5 replicaset <nameof replicaset>
+kubectl delte replicaset <name of replicaset>
