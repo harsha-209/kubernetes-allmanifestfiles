@@ -1,7 +1,7 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: ReplicaSet
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment #name of replicaset
   labes:
     app: my-replicaset
 spec:
@@ -11,7 +11,7 @@ spec:
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
-      name: harshad
+      name: harshad #name of pods
       labels:
         app: nginx
     spec:
