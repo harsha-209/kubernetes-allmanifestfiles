@@ -14,3 +14,4 @@ kubectl delet -f <manifestfile>
 
 Replicaset-commands
 
+s
