@@ -21,3 +21,9 @@ kubectl set image rs test-replicaset php-redis=nginx:1.7.9
 kubectl scale -replicas=6 -f <manifestfile>
 kubectl scale -replicas=5 replicaset <nameof replicaset>
 kubectl delte replicaset <name of replicaset>
+  
+  
+Deployment-commands
+kubectl get deployment
+kubectl edit deployment <deploymentname>
+kubectl get pods 
