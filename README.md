@@ -26,4 +26,13 @@ kubectl delte replicaset <name of replicaset>
 Deployment-commands
 kubectl get deployment
 kubectl edit deployment <deploymentname>
-kubectl get pods 
+kubectl get deployment <nameof deploymet>
+  
+  
+Namespace
+kubectl run <nameof pod> --image=redis -n <namespace>
+kubectl get namespace
+kubectl get pods -n <namespace>
+kubectl create namespace <name ofnamespace>
+  
+  
