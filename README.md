@@ -34,5 +34,6 @@ kubectl run <nameof pod> --image=redis -n <namespace>
 kubectl get namespace
 kubectl get pods -n <namespace>
 kubectl create namespace <name ofnamespace>
+kubeclt get pods <nameofpod> -n <particularnamespace>
   
   
