@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: sample-web
@@ -6,13 +6,13 @@ metadata:
 spec:
   type: NodePort #Loadbalancer
   ports:
-    - targetport: 8080
+    - targetPort: 8080
       port: 8080
-      nodeport: 30080 #optional or (use can assign 30000 to 32567)
+      nodePort: 30080 #optional or (use can assign 30000 to 32567)
   selector:
     name: webapplication #name of pod
  ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Pod
 metadata:
   name: webapplication
