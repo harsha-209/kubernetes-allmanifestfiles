@@ -40,4 +40,12 @@ kubectl get pods -n <namespace>
 kubectl create namespace <name ofnamespace>
 kubeclt get pods <nameofpod> -n <particularnamespace>
   
+service
+
+kubectl get svc
+kubectl get svc <nameof svc>
+kubectl describe svc <name of svc>
+suppose to if your deployment is cluster .then how to change into Nodeport
+kubectl expose deployment  <name of deployment>  --type=NodePort  --target-port=8080 --name=my-servic --dry-run=client -o yaml > servic.yaml #it creates a new manifest file
+  
   
