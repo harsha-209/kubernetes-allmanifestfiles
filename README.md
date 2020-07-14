@@ -11,6 +11,7 @@ kubectl edit pod <podname>
 kubectl run nginx  --image=nginx
 kubectl apply -f <manifestfile>
 kubectl delet -f <manifestfile>
+kubectl run <nameofpod>  --image=nginx  --restart=never  --dry-run -o yaml > pod.yaml #it creates a manifest file for kind is pod
 
 Replicaset-commands
 
@@ -27,6 +28,9 @@ Deployment-commands
 kubectl get deployment
 kubectl edit deployment <deploymentname>
 kubectl get deployment <nameof deploymet>
+kubectl create deployment <nameof deployment>  --image=nginx  #creating a deployment
+to scale up
+kubectl scale deployment <name of deployment> --replicas=2
   
   
 Namespace
