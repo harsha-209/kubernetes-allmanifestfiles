@@ -12,6 +12,7 @@ kubectl run nginx  --image=nginx
 kubectl apply -f <manifestfile>
 kubectl delet -f <manifestfile>
 kubectl run <nameofpod>  --image=nginx   --dry-run=client -o yaml > pod.yaml #it creates a manifest file for kind is pod
+kubectl run custom-nginx --image=nginx --port=8080
 
 Replicaset-commands
 
@@ -21,7 +22,7 @@ kubectl edit replicaset <name of replicaset>
 kubectl set image rs test-replicaset php-redis=nginx:1.7.9
 kubectl scale -replicas=6 -f <manifestfile>
 kubectl scale -replicas=5 replicaset <nameof replicaset>
-kubectl delte replicaset <name of replicaset>
+kubectl delete replicaset <name of replicaset>
   
   
 Deployment-commands
@@ -48,4 +49,16 @@ kubectl describe svc <name of svc>
 suppose to if your deployment is cluster .then how to change into Nodeport
 kubectl expose deployment  <name of deployment>  --type=NodePort  --target-port=8080 --name=my-servic --dry-run=client -o yaml > servic.yaml #it creates a new manifest file
   
+  
+imperative commands
+ kubectl run redis --image=redis:alpine -l tier=db
+ kubectl run nginx --image=redis 
+ kubectl run redis --image=redis:alpine -l tier=db  --dry-run=client -o yaml > pod.yaml
+ kubectl expose pod redis --port=6379 --name redis-service
+ kubectl expose pod  <name of pod> --port=8080 --type=NodePort  --name=my-servic
+ kubectl run custom-nginx --image=nginx --port=8080
+ kubectl create deployment redis-deploy --image redis --namespace=dev-ns
+ kubectl scale deployment redis-deploy --replicas=2 -n dev-ns
+ kubectl create deployment redis-deploy --image redis --namespace=dev-ns --dry-run=client -o yaml > deploy.yaml
+ kubectl run httpd --image=httpd:alpine --port=80 --expose
   
