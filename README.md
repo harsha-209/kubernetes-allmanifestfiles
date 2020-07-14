@@ -11,7 +11,7 @@ kubectl edit pod <podname>
 kubectl run nginx  --image=nginx
 kubectl apply -f <manifestfile>
 kubectl delet -f <manifestfile>
-kubectl run <nameofpod>  --image=nginx  --restart=never  --dry-run -o yaml > pod.yaml #it creates a manifest file for kind is pod
+kubectl run <nameofpod>  --image=nginx   --dry-run=client -o yaml > pod.yaml #it creates a manifest file for kind is pod
 
 Replicaset-commands
 
