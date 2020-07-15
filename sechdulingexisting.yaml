@@ -1,0 +1,18 @@
+# launching the existing pod into required worker in kuberneres
+apiVersion: v1
+kind: Binding
+metadata:
+  name: pod  #name of bind
+target:
+  apiVersion: v1
+  kind: Node
+  name: node01
+
+
+
+#use this below command
+first conver this above yaml file into json formate
+use this commmand 
+
+curl  --header "Content-Type:application/json" --request Post --data '{"apiVersion": "v1", same way paste all above stepss} https://$SERVER/api/v1/namespaces/default/pods/$PODNAME/binding/
+
