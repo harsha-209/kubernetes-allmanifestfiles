@@ -62,3 +62,17 @@ imperative commands
  kubectl create deployment redis-deploy --image redis --namespace=dev-ns --dry-run=client -o yaml > deploy.yaml
  kubectl run httpd --image=httpd:alpine --port=80 --expose
   
+  
+  
+selctors and labes
+
+kubectl get pods --selector env=dev | wc 
+'kubectl get all --selector env=prod,bu=finance,tier=frontend
+
+
+
+taints
+#how to check any taint is available or not (taint means which does not allow to lanuch a pod)
+kubectl describe node node01 | grep -i taints
+kubectl taint nodes node01 spray=mortein:NoSchedule # creating a taint
+  
