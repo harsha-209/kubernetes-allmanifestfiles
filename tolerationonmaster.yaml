@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hair
+spec:
+  containers:
+    - name: hair
+      image: nginx
+  tolerations:
+    - key: node-role.kubernetes.io/master: 
+      operator:  Exists
+      effect: "NoSchedule"
