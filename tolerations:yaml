@@ -7,7 +7,7 @@ spec:
     - name: nginx
       image: nginx
   tolerations:
-    key: "spray"
-    operator: "Equal"
-    value: moretien
-    effect: NoSchedule
+    - key: spray
+      operator: Equal
+      value: moretien
+      effect: NoSchedule
