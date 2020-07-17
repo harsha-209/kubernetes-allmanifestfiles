@@ -75,4 +75,7 @@ taints
 #how to check any taint is available or not (taint means which does not allow to lanuch a pod)
 kubectl describe node node01 | grep -i taints
 kubectl taint nodes node01 spray=mortein:NoSchedule # creating a taint
+kubectl taint nodes node01 spray=mortein:NoSchedule-
+kubectl taint nodes node1 key=value:NoSchedule
+kubectl taint nodes node1 key:NoSchedule-
   
