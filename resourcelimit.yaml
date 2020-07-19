@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: hari
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  resources:
+    limits:
+      memory: 10Mi
+    request:
+      memory: 5Mi
