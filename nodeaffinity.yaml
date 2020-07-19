@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: blue
+  labels:
+    app: skyblue
+spec: 
+  replicas: 6
+  selector:
+    labels:
+      app: blue
+  template:
+    metadata:
+      labels:
+        app: blue
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+      affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:        
+          - Key: color
+            values: blue 
