@@ -6,8 +6,8 @@ spec:
   containers:
     - name: nginx
       image: nginx
-  resources:
-    limits:
-      memory: 10Mi
-    request:
-      memory: 5Mi
+      resources:
+        requests:
+          memory: "5Mi"  # require minimum memory to run a pod
+        limits:
+          memory: "10Mi" #always greater thatn requests 
