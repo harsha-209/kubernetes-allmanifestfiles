@@ -78,4 +78,11 @@ kubectl taint nodes node01 spray=mortein:NoSchedule # creating a taint
 kubectl taint nodes node01 spray=mortein:NoSchedule-
 kubectl taint nodes node1 key=value:NoSchedule
 kubectl taint nodes node1 key:NoSchedule-
+
+
+labes
+kubectl label nodes node01 clour=blue
+# we can see lables by discribe nodes
+kubectl describe nodes node01
+
   
