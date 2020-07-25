@@ -85,4 +85,30 @@ kubectl label nodes node01 clour=blue
 # we can see lables by discribe nodes
 kubectl describe nodes node01
 
+
+static pods
+create a manifest file and place it in /etc/kubernets/manifestfile
+then it run that pods continously in master
+suppose if a static pods runs in kubernetes node
+ssh into that node and to delete that pod
+delete manifest file in /var/lib/kublet/config.yaml
+
+
+metric server to install on kubernets master
+
+use this link
+https://github.com/kodekloudhub/kubernetes-metrics-server
+
+it takes some time to run and up
+kubectl get pods
+now to check which nodes consumes higest cpu
+kubectl top node
+kubectl top pods
+
+
+logs
+to see logs of pods
+kubectl logs <name of pods>
+if two containers in a pod then how to check logs for first containers
+kubectl logs <name of pod> -c <containername>
   
