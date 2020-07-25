@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: commandpod
+spec:
+  containers:
+    name: nginx
+    image: nginx
+    command:
+      - "sleep"
+      - "15"
+      
+      or
+   command: [ "sleep", "15" ]
+   
+   
+   
+   suppose a docker file like this
+   
+   FROM python:3.6-alphine
+   COPY . /OPT
+   # Above command refers copying current directory content into opt folder
+   EXPOSE 8080
+   WORKDIR /OPT
+   
+   #Above refer to change directory to opt
+   to start a containner need entry point and commands
+   
+   ENTRYPOINT ["python", "app.py"]
+   CMD ["--color", "pink"]
+   
+   
+   how to pass above commands and entrypoint into manifest file
+   
+   command: ["python", "app.py"]
+   args:     ["--color", "pink"]
