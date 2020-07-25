@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: game-demo
+data:
+  # property-like keys; each key maps to a simple value
+  player_initial_lives: "3"
+  key: "value" #example
+  
+  
+  #how to pass these value into a pod using config 
+  
+ apiVersion: v1
+ kind: Pod
+ metadata:
+   name: oneppod
+ spec:
+   containers:
+     - name: nginx
+       image: nginx
+       env:
+         - name: no of players in it
+                                                # from the key name in the ConfigMap.
+           valueFrom:
+             configMapKeyRef:
+               name: game-demo           # The ConfigMap this value comes from. name of configmap
+               key: player_initial_lives
